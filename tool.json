@@ -1,0 +1,299 @@
+{
+  "tool": {
+    "id": "drogas-vasoativas",
+    "title": "Infusão de drogas vasoativas",
+    "short": "mcg/kg/min ↔ mL/h pela concentração",
+    "desc": "Converta a dose de drogas vasoativas (noradrenalina, adrenalina, dobutamina, dopamina) em vazão da bomba (mL/h) e vice-versa, pela diluição usada.",
+    "lead": "Converte a dose prescrita (mcg/kg/min ou mcg/min) em vazão da bomba de infusão (mL/h), ou a vazão em dose, a partir da quantidade de droga e do volume da solução.",
+    "spec": [
+      "medicina-intensiva",
+      "medicina-de-emergencia",
+      "anestesiologia",
+      "cardiologia"
+    ],
+    "tier": 1,
+    "fields": [
+      [
+        "droga",
+        "Droga",
+        "sel",
+        {
+          "opts": {
+            "nora": "Noradrenalina",
+            "adre": "Adrenalina",
+            "dopa": "Dopamina",
+            "dobuta": "Dobutamina",
+            "fenil": "Fenilefrina",
+            "milri": "Milrinona",
+            "outra": "Outra droga"
+          }
+        }
+      ],
+      [
+        "modo",
+        "Calcular",
+        "radio",
+        {
+          "opts": {
+            "dose": "Vazão a partir da dose",
+            "vazao": "Dose a partir da vazão"
+          }
+        }
+      ],
+      [
+        "unidade",
+        "Unidade da dose",
+        "radio",
+        {
+          "opts": {
+            "kg": "mcg/kg/min",
+            "min": "mcg/min"
+          }
+        }
+      ],
+      [
+        "massa",
+        "Quantidade de droga na solução",
+        "num",
+        {
+          "min": 0.1,
+          "max": 2000,
+          "step": 0.1,
+          "unit": "mg",
+          "ph": "16"
+        }
+      ],
+      [
+        "volume",
+        "Volume total da solução",
+        "num",
+        {
+          "min": 10,
+          "max": 1000,
+          "unit": "mL",
+          "ph": "250"
+        }
+      ],
+      [
+        "peso",
+        "Peso (para mcg/kg/min)",
+        "num",
+        {
+          "min": 2,
+          "max": 300,
+          "step": 0.1,
+          "unit": "kg",
+          "ph": "70",
+          "opt": true
+        }
+      ],
+      [
+        "dose",
+        "Dose",
+        "num",
+        {
+          "min": 0.001,
+          "max": 100,
+          "step": 0.001,
+          "unit": "mcg/kg/min ou mcg/min",
+          "ph": "0,1",
+          "opt": true
+        }
+      ],
+      [
+        "vazao",
+        "Vazão da bomba",
+        "num",
+        {
+          "min": 0.1,
+          "max": 999,
+          "step": 0.1,
+          "unit": "mL/h",
+          "ph": "10",
+          "opt": true
+        }
+      ]
+    ],
+    "formula": "<p><strong>Concentração</strong> (mcg/mL) = quantidade de droga (mg) × 1.000 ÷ volume (mL).</p><p><strong>Vazão</strong> (mL/h) = dose (mcg/kg/min) × peso (kg) × 60 ÷ concentração. Para dose em mcg/min, sem o peso.</p><p><strong>Dose</strong> (mcg/kg/min) = vazão × concentração ÷ (60 × peso).</p>",
+    "table": [
+      [
+        "Droga",
+        "Faixa usual (mcg/kg/min)"
+      ],
+      [
+        "Noradrenalina",
+        "0,01 a 3"
+      ],
+      [
+        "Adrenalina",
+        "0,01 a 0,10"
+      ],
+      [
+        "Dopamina",
+        "2 a 20"
+      ],
+      [
+        "Dobutamina",
+        "2 a 20"
+      ],
+      [
+        "Fenilefrina",
+        "0,4 a 9,1"
+      ],
+      [
+        "Milrinona",
+        "0,375 a 0,75"
+      ]
+    ],
+    "table_note": "Faixas usuais segundo Overgaard e Dzavík (2008). Siga a padronização de diluições e doses do seu serviço.",
+    "tips": [
+      "Confira se a prescrição é em mcg/kg/min ou em mcg/min: a noradrenalina é prescrita nas duas unidades, e confundir as duas multiplica a dose pelo peso.",
+      "Na sepse, a noradrenalina é o vasopressor de primeira escolha (Surviving Sepsis 2021), com meta inicial de PAM ≥ 65 mmHg; vasopressina é adicionada quando a noradrenalina está entre 0,25 e 0,5 mcg/kg/min.",
+      "Soluções concentradas reduzem o volume infundido, mas pedem acesso central e bomba precisa; em acesso periférico, use diluições maiores e por pouco tempo.",
+      "Sempre dupla-cheque o cálculo com outro profissional antes de iniciar: erros de diluição são uma das causas mais comuns de evento adverso grave com vasoativos."
+    ],
+    "sources": [
+      [
+        "Overgaard CB, Dzavík V. Inotropes and vasopressors: review of physiology and clinical use in cardiovascular disease. Circulation, 2008.",
+        "https://doi.org/10.1161/CIRCULATIONAHA.107.728840"
+      ],
+      [
+        "Evans L et al. Surviving sepsis campaign: international guidelines for management of sepsis and septic shock 2021. Intensive Care Med, 2021.",
+        "https://doi.org/10.1007/s00134-021-06506-y"
+      ]
+    ],
+    "cases": [
+      [
+        "Noradrenalina 16 mg/250 mL (64 mcg/mL), 70 kg, 0,1 mcg/kg/min: 6,6 mL/h",
+        {
+          "droga": "nora",
+          "modo": "dose",
+          "unidade": "kg",
+          "massa": 16,
+          "volume": 250,
+          "peso": 70,
+          "dose": 0.1
+        },
+        {
+          "raw": {
+            "conc": 64,
+            "vazao": 6.5625
+          },
+          "main": "6,6",
+          "level": "info"
+        }
+      ],
+      [
+        "Mesma solução a 10 mL/h, 70 kg: 0,152 mcg/kg/min",
+        {
+          "droga": "nora",
+          "modo": "vazao",
+          "unidade": "kg",
+          "massa": 16,
+          "volume": 250,
+          "peso": 70,
+          "vazao": 10
+        },
+        {
+          "raw": {
+            "dose": 0.15238
+          },
+          "main": "0,152",
+          "level": "info",
+          "tol": 0.0005
+        }
+      ],
+      [
+        "Dobutamina 250 mg/250 mL, 80 kg, 5 mcg/kg/min: 24 mL/h",
+        {
+          "droga": "dobuta",
+          "modo": "dose",
+          "unidade": "kg",
+          "massa": 250,
+          "volume": 250,
+          "peso": 80,
+          "dose": 5
+        },
+        {
+          "raw": {
+            "conc": 1000,
+            "vazao": 24
+          },
+          "level": "info"
+        }
+      ],
+      [
+        "Noradrenalina 4 mg/250 mL, 8 mcg/min: 30 mL/h",
+        {
+          "droga": "nora",
+          "modo": "dose",
+          "unidade": "min",
+          "massa": 4,
+          "volume": 250,
+          "dose": 8
+        },
+        {
+          "raw": {
+            "conc": 16,
+            "vazao": 30
+          },
+          "level": "info"
+        }
+      ],
+      [
+        "mcg/kg/min sem peso: pede o peso",
+        {
+          "droga": "nora",
+          "modo": "dose",
+          "unidade": "kg",
+          "massa": 16,
+          "volume": 250,
+          "dose": 0.1
+        },
+        {
+          "error": true
+        }
+      ]
+    ],
+    "batch": "urgencia",
+    "kind": "Calculadora",
+    "config": null,
+    "areaId": "urgencia",
+    "clinicalReview": "pending",
+    "sourceReview": "pending",
+    "sourceFile": "app/content/ferramentas/urgencia.php",
+    "arithmeticTest": {
+      "status": "passed",
+      "testedAt": "2026-09-25",
+      "total": 5,
+      "passed": 5,
+      "failures": []
+    },
+    "independentArithmeticTest": {
+      "status": "not-tested",
+      "testedAt": null,
+      "total": 0,
+      "passed": 0,
+      "cases": []
+    }
+  },
+  "review": {
+    "id": "drogas-vasoativas",
+    "status": "restricted",
+    "reason": "A conversão usa massa total digitada e faixas usuais sem seleção de formulação, equivalente em base/sal ou protocolo. Bula varia por produto e expressa a concentração de noradrenalina equivalente. Suspender resultados de bomba/dose até revisão farmacêutica e casos independentes por unidade.",
+    "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215700Orig1s012lbl.pdf",
+    "sourceTitle": "FDA — Norepinephrine Bitartrate in Sodium Chloride Injection",
+    "sourceDate": "2025-10 (revisão impressa na bula; arquivo FDA 2026)",
+    "publisherRegion": "Estados Unidos / FDA",
+    "checkedAt": "2026-09-25",
+    "clinicalValidation": "not-performed",
+    "suppressLegacyFormula": true,
+    "formulaOverride": "Conversão dimensional em revisão: concentração (mcg/mL) = massa do princípio ativo (mg) × 1000 / volume final (mL). A identidade da substância, a formulação e a unidade devem ser verificadas antes de qualquer cálculo de infusão."
+  },
+  "sourceFile": {
+    "path": "app/content/ferramentas/urgencia.php",
+    "sha256": "b24f3a77383430c3f3463168e78e88341034b3108bd712f3613ae32672dc281c",
+    "bytes": 121059
+  },
+  "clinicalValidation": "not-performed"
+}
