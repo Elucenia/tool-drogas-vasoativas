@@ -1,7 +1,7 @@
 {
   "name": "@elucenia/tool-drogas-vasoativas",
   "version": "0.1.0",
-  "description": "Infusão de drogas vasoativas · Elucenia: reprodução técnica de fórmula ou escore clínico, sem dependências, para navegador e Node.js.",
+  "description": "Infusão de drogas vasoativas · ELUCENIA: reprodução técnica de fórmula ou escore clínico, sem dependências, para navegador e Node.js.",
   "keywords": [
     "elucenia",
     "medical-calculator",
