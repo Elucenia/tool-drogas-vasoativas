@@ -255,13 +255,9 @@
         }
       ]
     ],
-    "batch": "urgencia",
     "kind": "Calculadora",
     "config": null,
-    "areaId": "urgencia",
     "clinicalReview": "pending",
-    "sourceReview": "pending",
-    "sourceFile": "app/content/ferramentas/urgencia.php",
     "arithmeticTest": {
       "status": "passed",
       "testedAt": "2026-09-25",
@@ -289,11 +285,6 @@
     "clinicalValidation": "not-performed",
     "suppressLegacyFormula": true,
     "formulaOverride": "Conversão dimensional em revisão: concentração (mcg/mL) = massa do princípio ativo (mg) × 1000 / volume final (mL). A identidade da substância, a formulação e a unidade devem ser verificadas antes de qualquer cálculo de infusão."
-  },
-  "sourceFile": {
-    "path": "app/content/ferramentas/urgencia.php",
-    "sha256": "b24f3a77383430c3f3463168e78e88341034b3108bd712f3613ae32672dc281c",
-    "bytes": 121059
   },
   "clinicalValidation": "not-performed"
 }
