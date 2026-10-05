@@ -1,0 +1,86 @@
+{
+  "schema": "elucenia-publication-base-reference",
+  "checkedAt": "2026-10-05T15:38:24.003Z",
+  "repo": "Elucenia/tool-drogas-vasoativas",
+  "branch": "main",
+  "commit": "1d4e031f9abb2168007ba3fcc2f14bccfbe93e2a",
+  "treeSha": "c48801b7f7244b746351eb756d842914fb697d53",
+  "status": "protected-hashes-unchanged",
+  "protectedFiles": [
+    {
+      "file": "LICENSE",
+      "historicalGitBlobSha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "currentGitBlobSha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "candidateGitBlobSha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "candidateSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "same": true
+    },
+    {
+      "file": "NOTICE",
+      "historicalGitBlobSha1": "e518c2adcdcd91b3a1f679a0ef9d1092e2d14370",
+      "currentGitBlobSha1": "e518c2adcdcd91b3a1f679a0ef9d1092e2d14370",
+      "candidateGitBlobSha1": "e518c2adcdcd91b3a1f679a0ef9d1092e2d14370",
+      "candidateSha256": "2185bde0ba64f6589ecda661f60564f0c4ad6610c193450eb18eb8fad0eb2f80",
+      "same": true
+    },
+    {
+      "file": "AUTHORSHIP.md",
+      "historicalGitBlobSha1": "58d594dafb42fc5c2d89b4e5e1f3d5daad9f391d",
+      "currentGitBlobSha1": "58d594dafb42fc5c2d89b4e5e1f3d5daad9f391d",
+      "candidateGitBlobSha1": "58d594dafb42fc5c2d89b4e5e1f3d5daad9f391d",
+      "candidateSha256": "f71e72c83ca381adf29f70297eebf9cef6d812b850250b1befa57ebd21d702a8",
+      "same": true
+    },
+    {
+      "file": "CITATION.cff",
+      "historicalGitBlobSha1": "7777e6d55b890ddb649bf9e05c6c5de256b397b2",
+      "currentGitBlobSha1": "7777e6d55b890ddb649bf9e05c6c5de256b397b2",
+      "candidateGitBlobSha1": "7777e6d55b890ddb649bf9e05c6c5de256b397b2",
+      "candidateSha256": "999724be48e7919d26a8783f6b45d882bf6af62df37e64c42fbb92a73f592d2b",
+      "same": true
+    },
+    {
+      "file": "SECURITY.md",
+      "historicalGitBlobSha1": "44eafb996937916cbe53e24fa9c5208fe03d5767",
+      "currentGitBlobSha1": "44eafb996937916cbe53e24fa9c5208fe03d5767",
+      "candidateGitBlobSha1": "44eafb996937916cbe53e24fa9c5208fe03d5767",
+      "candidateSha256": "3c20d46e436116be0c673f0260b24bbc2193fafbd15fb4659bf0e545b452487e",
+      "same": true
+    },
+    {
+      "file": "CONTRIBUTING.md",
+      "historicalGitBlobSha1": "f856534d8728432f7e44dc956a98bf105046e215",
+      "currentGitBlobSha1": "f856534d8728432f7e44dc956a98bf105046e215",
+      "candidateGitBlobSha1": "f856534d8728432f7e44dc956a98bf105046e215",
+      "candidateSha256": "55c2959a58f4f90fb7e6f3cba5a74076c84c01f958ddbd10212518ab2284413b",
+      "same": true
+    },
+    {
+      "file": ".github/workflows/ci.yml",
+      "historicalGitBlobSha1": "7d3f2f34aa2e948d30695d82d64361467d9e6485",
+      "currentGitBlobSha1": "7d3f2f34aa2e948d30695d82d64361467d9e6485",
+      "candidateGitBlobSha1": "7d3f2f34aa2e948d30695d82d64361467d9e6485",
+      "candidateSha256": "bdbefea1fc6b1d8847725c698f62920917bc8d6504bfe8ed622ed2d5aaf7f160",
+      "same": true
+    },
+    {
+      "file": ".gitattributes",
+      "historicalGitBlobSha1": "6313b56c57848efce05faa7aa7e901ccfc2886ea",
+      "currentGitBlobSha1": "6313b56c57848efce05faa7aa7e901ccfc2886ea",
+      "candidateGitBlobSha1": "6313b56c57848efce05faa7aa7e901ccfc2886ea",
+      "candidateSha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c",
+      "same": true
+    },
+    {
+      "file": ".gitignore",
+      "historicalGitBlobSha1": "e375bd25cf1a574310ac4c7af0299884556e81e1",
+      "currentGitBlobSha1": "e375bd25cf1a574310ac4c7af0299884556e81e1",
+      "candidateGitBlobSha1": "e375bd25cf1a574310ac4c7af0299884556e81e1",
+      "candidateSha256": "763fb702ccbb9bfd8549ca3d0844c731b22aca4e665a2b61d1bb764b64f734d8",
+      "same": true
+    }
+  ],
+  "sourceReceiptSha256": "afde2d1f95a20293350a160c2edfbbb80c4c8a740fbb8c2ad29790c83e17a082",
+  "newProtectedFilesAreFirstAddition": false,
+  "publicationPerformed": false
+}

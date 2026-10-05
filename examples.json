@@ -1,6 +1,19 @@
 [
   {
-    "label": "Noradrenalina 16 mg/250 mL (64 mcg/mL), 70 kg, 0,1 mcg/kg/min: 6,6 mL/h",
+    "id": "drogas-vasoativas",
+    "kind": "native-source-reference",
+    "index": 0,
+    "name": "Vetor sintético principal de referência",
+    "originalInput": {
+      "droga": "nora",
+      "modo": "dose",
+      "unidade": "kg",
+      "massa": 16,
+      "volume": 250,
+      "peso": 70,
+      "dose": 0.1,
+      "contexto": "1"
+    },
     "input": {
       "droga": "nora",
       "modo": "dose",
@@ -8,134 +21,192 @@
       "massa": 16,
       "volume": 250,
       "peso": 70,
-      "dose": 0.1
+      "dose": 0.1,
+      "contexto": "1"
     },
+    "amendments": [],
     "expected": {
       "raw": {
         "conc": 64,
+        "vazao": 6.5625,
+        "dose": 0.1
+      },
+      "main": "6,56",
+      "tol": 1e-9
+    },
+    "recordedResult": {
+      "main": [
+        "6,56",
+        "mL/h"
+      ],
+      "label": "Conversão de vazão",
+      "raw": {
+        "conc": 64,
+        "vazao": 6.5625,
+        "dose": 0.1
+      }
+    },
+    "provenance": {
+      "receiptSha256": "be450b3731f8b30a13e0b36bf1f2f579bce00de325c5622bc3e526235c1c79f7",
+      "scope": "Existing documented synthetic reference and precise source-audit regression baseline; no new independent oracle"
+    }
+  },
+  {
+    "id": "drogas-vasoativas",
+    "kind": "native-source-reference",
+    "index": 1,
+    "name": "Conversão inversa peso70 vazão6,5625",
+    "originalInput": {
+      "droga": "nora",
+      "modo": "vazao",
+      "unidade": "kg",
+      "massa": 16,
+      "volume": 250,
+      "peso": 70,
+      "dose": null,
+      "contexto": "1",
+      "vazao": 6.5625
+    },
+    "input": {
+      "droga": "nora",
+      "modo": "vazao",
+      "unidade": "kg",
+      "massa": 16,
+      "volume": 250,
+      "peso": 70,
+      "dose": null,
+      "contexto": "1",
+      "vazao": 6.5625
+    },
+    "amendments": [],
+    "expected": {
+      "raw": {
+        "conc": 64,
+        "dose": 0.1,
         "vazao": 6.5625
       },
-      "main": "6,6",
-      "level": "info"
+      "main": "0,1000",
+      "tol": 1e-9
     },
-    "originalInput": {
-      "droga": "nora",
-      "modo": "dose",
-      "unidade": "kg",
-      "massa": 16,
-      "volume": 250,
-      "peso": 70,
-      "dose": 0.1
+    "recordedResult": {
+      "main": [
+        "0,1000",
+        "mcg/kg/min"
+      ],
+      "label": "Conversão de dose",
+      "raw": {
+        "conc": 64,
+        "dose": 0.1,
+        "vazao": 6.5625
+      }
     },
-    "expandedZeroOptions": []
+    "provenance": {
+      "receiptSha256": "be450b3731f8b30a13e0b36bf1f2f579bce00de325c5622bc3e526235c1c79f7",
+      "scope": "Existing documented synthetic reference and precise source-audit regression baseline; no new independent oracle"
+    }
   },
   {
-    "label": "Mesma solução a 10 mL/h, 70 kg: 0,152 mcg/kg/min",
-    "input": {
-      "droga": "nora",
-      "modo": "vazao",
-      "unidade": "kg",
-      "massa": 16,
-      "volume": 250,
-      "peso": 70,
-      "vazao": 10
-    },
-    "expected": {
-      "raw": {
-        "dose": 0.15238
-      },
-      "main": "0,152",
-      "level": "info",
-      "tol": 0.0005
-    },
-    "originalInput": {
-      "droga": "nora",
-      "modo": "vazao",
-      "unidade": "kg",
-      "massa": 16,
-      "volume": 250,
-      "peso": 70,
-      "vazao": 10
-    },
-    "expandedZeroOptions": []
-  },
-  {
-    "label": "Dobutamina 250 mg/250 mL, 80 kg, 5 mcg/kg/min: 24 mL/h",
-    "input": {
-      "droga": "dobuta",
-      "modo": "dose",
-      "unidade": "kg",
-      "massa": 250,
-      "volume": 250,
-      "peso": 80,
-      "dose": 5
-    },
-    "expected": {
-      "raw": {
-        "conc": 1000,
-        "vazao": 24
-      },
-      "level": "info"
-    },
-    "originalInput": {
-      "droga": "dobuta",
-      "modo": "dose",
-      "unidade": "kg",
-      "massa": 250,
-      "volume": 250,
-      "peso": 80,
-      "dose": 5
-    },
-    "expandedZeroOptions": []
-  },
-  {
-    "label": "Noradrenalina 4 mg/250 mL, 8 mcg/min: 30 mL/h",
-    "input": {
-      "droga": "nora",
-      "modo": "dose",
-      "unidade": "min",
-      "massa": 4,
-      "volume": 250,
-      "dose": 8
-    },
-    "expected": {
-      "raw": {
-        "conc": 16,
-        "vazao": 30
-      },
-      "level": "info"
-    },
+    "id": "drogas-vasoativas",
+    "kind": "native-source-reference",
+    "index": 2,
+    "name": "Unidade absoluta dispensa peso",
     "originalInput": {
       "droga": "nora",
       "modo": "dose",
       "unidade": "min",
       "massa": 4,
-      "volume": 250,
-      "dose": 8
+      "volume": 1000,
+      "peso": null,
+      "dose": 8,
+      "contexto": "1"
     },
-    "expandedZeroOptions": []
-  },
-  {
-    "label": "mcg/kg/min sem peso: pede o peso",
     "input": {
       "droga": "nora",
       "modo": "dose",
-      "unidade": "kg",
-      "massa": 16,
-      "volume": 250,
-      "dose": 0.1
+      "unidade": "min",
+      "massa": 4,
+      "volume": 1000,
+      "peso": null,
+      "dose": 8,
+      "contexto": "1"
     },
+    "amendments": [],
     "expected": {
-      "error": true
+      "raw": {
+        "conc": 4,
+        "vazao": 120,
+        "dose": 8
+      },
+      "main": "120,00"
     },
+    "recordedResult": {
+      "main": [
+        "120,00",
+        "mL/h"
+      ],
+      "label": "Conversão de vazão",
+      "raw": {
+        "conc": 4,
+        "vazao": 120,
+        "dose": 8
+      }
+    },
+    "provenance": {
+      "receiptSha256": "be450b3731f8b30a13e0b36bf1f2f579bce00de325c5622bc3e526235c1c79f7",
+      "scope": "Existing documented synthetic reference and precise source-audit regression baseline; no new independent oracle"
+    }
+  },
+  {
+    "id": "drogas-vasoativas",
+    "kind": "native-source-reference",
+    "index": 3,
+    "name": "Concentração base4mg/1000mL corresponde à bula",
     "originalInput": {
       "droga": "nora",
-      "modo": "dose",
-      "unidade": "kg",
-      "massa": 16,
-      "volume": 250,
-      "dose": 0.1
+      "modo": "vazao",
+      "unidade": "min",
+      "massa": 4,
+      "volume": 1000,
+      "peso": null,
+      "dose": null,
+      "contexto": "1",
+      "vazao": 120
     },
-    "expandedZeroOptions": []
+    "input": {
+      "droga": "nora",
+      "modo": "vazao",
+      "unidade": "min",
+      "massa": 4,
+      "volume": 1000,
+      "peso": null,
+      "dose": null,
+      "contexto": "1",
+      "vazao": 120
+    },
+    "amendments": [],
+    "expected": {
+      "raw": {
+        "conc": 4,
+        "dose": 8,
+        "vazao": 120
+      },
+      "main": "8,0000"
+    },
+    "recordedResult": {
+      "main": [
+        "8,0000",
+        "mcg/min"
+      ],
+      "label": "Conversão de dose",
+      "raw": {
+        "conc": 4,
+        "dose": 8,
+        "vazao": 120
+      }
+    },
+    "provenance": {
+      "receiptSha256": "be450b3731f8b30a13e0b36bf1f2f579bce00de325c5622bc3e526235c1c79f7",
+      "scope": "Existing documented synthetic reference and precise source-audit regression baseline; no new independent oracle"
+    }
   }
 ]

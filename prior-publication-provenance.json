@@ -1,0 +1,154 @@
+{
+  "stage": "prepared-not-published",
+  "id": "drogas-vasoativas",
+  "repository": "Elucenia/tool-drogas-vasoativas",
+  "build": {
+    "id": "6QpMzbnUBE2fep9nyJzTM",
+    "directory": ".next-private-final36",
+    "receiptSha256": "05823c22753741cd9947b8a5edad0c3f232f5cc4e935d1015837524ac6c34d0b"
+  },
+  "baseline": {
+    "parentCommitSha": "1d4e031f9abb2168007ba3fcc2f14bccfbe93e2a",
+    "baseTreeSha": "c48801b7f7244b746351eb756d842914fb697d53",
+    "indexBlobSha": "36bcba7077f4d80a0ba0d4c258cb6365ae92c65b",
+    "protectedFiles": {
+      "LICENSE": {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+        "size": 11358,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/d645695673349e3947e8e5ae42332d0ac3164cd7"
+      },
+      "NOTICE": {
+        "path": "NOTICE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e518c2adcdcd91b3a1f679a0ef9d1092e2d14370",
+        "size": 1633,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/e518c2adcdcd91b3a1f679a0ef9d1092e2d14370"
+      },
+      "AUTHORSHIP.md": {
+        "path": "AUTHORSHIP.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "58d594dafb42fc5c2d89b4e5e1f3d5daad9f391d",
+        "size": 3299,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/58d594dafb42fc5c2d89b4e5e1f3d5daad9f391d"
+      },
+      "CITATION.cff": {
+        "path": "CITATION.cff",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7777e6d55b890ddb649bf9e05c6c5de256b397b2",
+        "size": 914,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/7777e6d55b890ddb649bf9e05c6c5de256b397b2"
+      },
+      "SECURITY.md": {
+        "path": "SECURITY.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "44eafb996937916cbe53e24fa9c5208fe03d5767",
+        "size": 894,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/44eafb996937916cbe53e24fa9c5208fe03d5767"
+      },
+      "CONTRIBUTING.md": {
+        "path": "CONTRIBUTING.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f856534d8728432f7e44dc956a98bf105046e215",
+        "size": 1468,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/f856534d8728432f7e44dc956a98bf105046e215"
+      },
+      ".github/workflows/ci.yml": {
+        "path": ".github/workflows/ci.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7d3f2f34aa2e948d30695d82d64361467d9e6485",
+        "size": 279,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/7d3f2f34aa2e948d30695d82d64361467d9e6485"
+      },
+      ".gitattributes": {
+        "path": ".gitattributes",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6313b56c57848efce05faa7aa7e901ccfc2886ea",
+        "size": 19,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/6313b56c57848efce05faa7aa7e901ccfc2886ea"
+      },
+      ".gitignore": {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e375bd25cf1a574310ac4c7af0299884556e81e1",
+        "size": 42,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/e375bd25cf1a574310ac4c7af0299884556e81e1"
+      }
+    }
+  },
+  "methodSourceModules": [
+    "calculator.js",
+    "runtime/restored-methods.cjs",
+    "runtime/restoration-original-tools.json"
+  ],
+  "implementationBrowserSha256": "e1bd04af8d53ef94e5ad009baa76065dd7cb0a507e6aca5a5071d0a247d277a4",
+  "localeDataSha256": "8b38ae50518cf678438c0a02d9b91445e38fed8b8707f398d7490b0421d4f1d1",
+  "originalStyleSha256": "8fd25e9dc1c0980e3b39b2375d36b96276eec3cbc24284cbc3cc01dc00a67a5c",
+  "originalIndexSha256": "64e05abc72711920a836e74996d61fe239ef7cca852b07faf88af5e7a191cae2",
+  "example": {
+    "label": "Current source-owned complete UI/API fixture",
+    "input": {
+      "droga": "nora",
+      "modo": "dose",
+      "unidade": "kg",
+      "massa": 16,
+      "volume": 250,
+      "peso": 70,
+      "dose": 0.1,
+      "contexto": "1"
+    },
+    "expected": {
+      "raw": {
+        "conc": 64,
+        "vazao": 6.5625,
+        "dose": 0.1
+      },
+      "main": "6,56",
+      "tol": 1e-9
+    },
+    "obtained": {
+      "id": "drogas-vasoativas",
+      "main": [
+        "6,56",
+        "mL/h"
+      ],
+      "label": "Conversão de vazão",
+      "raw": {
+        "conc": 64,
+        "vazao": 6.5625,
+        "dose": 0.1
+      },
+      "methodVersion": "Conversão dimensional de princípio ativo; sem faixas de dose",
+      "clinicalValidation": "not-performed"
+    },
+    "scope": "Source-owned example Node/browser wiring parity; not a new clinical oracle"
+  },
+  "clinicalApproval": "not-performed",
+  "professionalLanguageApproval": "not-performed",
+  "sourceRightsApproval": "not-performed",
+  "documentationLocales": [
+    "pt-BR",
+    "en",
+    "es",
+    "fr",
+    "de",
+    "it",
+    "ar",
+    "zh",
+    "ja",
+    "hi"
+  ],
+  "documentationTemplateSha256": "ae4c41b39ab92a14adbfab83b946751a75c8168b5927e1f808d1c629ec032ea4",
+  "appWrites": false,
+  "externalMutations": false
+}

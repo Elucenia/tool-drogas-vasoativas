@@ -1,0 +1,1082 @@
+{
+  "receipt": {
+    "file": "reports/review-20261005-completion/deploy-lock/r5-all-calculators-http-results.json",
+    "bytes": 7105457,
+    "sha256": "be450b3731f8b30a13e0b36bf1f2f579bce00de325c5622bc3e526235c1c79f7"
+  },
+  "build": {
+    "id": "RYDdJbZxqrM8sgoyKEQc-",
+    "standaloneServer": {
+      "file": "reports/review-20261005-completion/deploy-lock/r5-isolated-runtime/.next/standalone/server.js",
+      "sha256": "631d43264038e7aa367b5405041eb3706d73fd3366925a7ef17a07119cfa166e",
+      "bytes": 10457
+    },
+    "catalogPin": {
+      "file": "deliveries/elucenia-next-hostinger-r5/.next/server/pages/en/tools.json",
+      "sha256": "33917dfdae9bea59cae22bfca34eaef2a21046a832af98c1a8d2718075de63ec",
+      "bytes": 103793
+    }
+  },
+  "scope": {
+    "syntheticDataOnly": true,
+    "applicationModuleImports": 0,
+    "browserInteractions": 0,
+    "newIndependentOracles": 0,
+    "nativeSourceReferenceCases": 882,
+    "additionalDecimalCases": 4,
+    "clinicalApproval": false,
+    "professionalLanguageApproval": false,
+    "populationValidation": false,
+    "hostingerDeploymentVerified": false,
+    "actualHTTPExecution": true,
+    "standaloneNodeServer": true,
+    "nodeVersion": "v22.18.0",
+    "noNewClinicalOrProfessionalApproval": true,
+    "pubmedResourceIsNotCalculatorAndNotIncludedIn222": true,
+    "description": "All 882 existing reference cases across the 218 native calculators plus four existing Decimal50 examples, executed via HTTP against the final local r5 standalone build. Raw precise source-audit comparisons are transport regressions, not independent clinical or full-method validation."
+  },
+  "tool": {
+    "id": "drogas-vasoativas",
+    "title": "Infusão de drogas vasoativas",
+    "methodVersion": "Conversão dimensional de princípio ativo; sem faixas de dose",
+    "implementationVersion": "drogas-vasoativas@native-2026-10-04+cbf40658efb4",
+    "sources": [
+      [
+        "DailyMed · norepinefrina · equivalência base/sal e concentração final",
+        "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=52e22892-4fc3-4f53-9f39-0b5c66da3040&version=3"
+      ],
+      [
+        "Overgaard CB, Dzavík V. Inotropes and vasopressors: review of physiology and clinical use in cardiovascular disease. Circulation, 2008.",
+        "https://doi.org/10.1161/CIRCULATIONAHA.107.728840"
+      ],
+      [
+        "Evans L et al. Surviving sepsis campaign: international guidelines for management of sepsis and septic shock 2021. Intensive Care Med, 2021.",
+        "https://doi.org/10.1007/s00134-021-06506-y"
+      ]
+    ],
+    "limits": "Não converte automaticamente massa do sal em base nem escolhe dose usual. É obrigatório conferir formulação; nome da droga não preenche dose, concentração ou proporção.",
+    "sourceEditionEvidence": [
+      {
+        "citation": "DailyMed · norepinefrina · equivalência base/sal e concentração final",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=52e22892-4fc3-4f53-9f39-0b5c66da3040&version=3",
+        "class": "existing-source-record-transcribed",
+        "declaredCitationPreserved": true,
+        "sourceIdentityRecheckedInThisNormalization": false,
+        "publicationEditionConfirmationInThisNormalization": "not-performed",
+        "fullTextRetrievalInThisNormalization": false,
+        "formulaConformance": "not-assessed"
+      },
+      {
+        "citation": "Overgaard CB, Dzavík V. Inotropes and vasopressors: review of physiology and clinical use in cardiovascular disease. Circulation, 2008.",
+        "url": "https://doi.org/10.1161/CIRCULATIONAHA.107.728840",
+        "class": "existing-source-record-transcribed",
+        "declaredCitationPreserved": true,
+        "sourceIdentityRecheckedInThisNormalization": false,
+        "publicationEditionConfirmationInThisNormalization": "not-performed",
+        "fullTextRetrievalInThisNormalization": false,
+        "formulaConformance": "not-assessed"
+      },
+      {
+        "citation": "Evans L et al. Surviving sepsis campaign: international guidelines for management of sepsis and septic shock 2021. Intensive Care Med, 2021.",
+        "url": "https://doi.org/10.1007/s00134-021-06506-y",
+        "class": "existing-source-record-transcribed",
+        "declaredCitationPreserved": true,
+        "sourceIdentityRecheckedInThisNormalization": false,
+        "publicationEditionConfirmationInThisNormalization": "not-performed",
+        "fullTextRetrievalInThisNormalization": false,
+        "formulaConformance": "not-assessed"
+      }
+    ],
+    "calculator": {
+      "file": "deliveries/elucenia-next-hostinger-r5/private/tool-code/drogas-vasoativas/calculator.js",
+      "sha256": "cbf40658efb4b750a59de655fa3ef414431f616d6b985a81fbd92ea17c36ad25",
+      "bytes": 495
+    },
+    "cases": 4,
+    "clinicalApproval": false,
+    "professionalLanguageApproval": false,
+    "replayed": 4,
+    "passed": 4,
+    "failed": 0,
+    "status": "passed"
+  },
+  "results": [
+    {
+      "id": "drogas-vasoativas",
+      "kind": "native-source-reference",
+      "index": 0,
+      "name": "Vetor sintético principal de referência",
+      "originalInput": {
+        "droga": "nora",
+        "modo": "dose",
+        "unidade": "kg",
+        "massa": 16,
+        "volume": 250,
+        "peso": 70,
+        "dose": 0.1,
+        "contexto": "1"
+      },
+      "input": {
+        "droga": "nora",
+        "modo": "dose",
+        "unidade": "kg",
+        "massa": 16,
+        "volume": 250,
+        "peso": 70,
+        "dose": 0.1,
+        "contexto": "1"
+      },
+      "amendments": [],
+      "expected": {
+        "raw": {
+          "conc": 64,
+          "vazao": 6.5625,
+          "dose": 0.1
+        },
+        "main": "6,56",
+        "tol": 1e-9
+      },
+      "recordedResult": {
+        "main": [
+          "6,56",
+          "mL/h"
+        ],
+        "label": "Conversão de vazão",
+        "raw": {
+          "conc": 64,
+          "vazao": 6.5625,
+          "dose": 0.1
+        }
+      },
+      "provenance": {
+        "bank": {
+          "file": "reports/review-20261003/source-cases-audit.json",
+          "sha256": "da6d27d65bcaed56528da83bd0ffaa3d407fc467ea7f9cb67ec40a1a78c6febf",
+          "bytes": 885399
+        },
+        "canonical": {
+          "file": "deliveries/elucenia-next-hostinger-r5/private/canonical-medical-tools.json",
+          "sha256": "988c58b5409ecc0df7e05193d88c7df930af9ce187b0688534a31f6d627ee4ad",
+          "bytes": 29045565
+        },
+        "scope": "Existing recorded source expectations and precise source-audit transport baseline; no newly derived independent oracle"
+      },
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:3062/api/tools/drogas-vasoativas/calculate",
+        "origin": "http://127.0.0.1:3062",
+        "payload": {
+          "input": {
+            "droga": "nora",
+            "modo": "dose",
+            "unidade": "kg",
+            "massa": 16,
+            "volume": 250,
+            "peso": 70,
+            "dose": 0.1,
+            "contexto": "1"
+          }
+        }
+      },
+      "attempts": [
+        {
+          "url": "http://127.0.0.1:3062/api/tools/drogas-vasoativas/calculate",
+          "startedAt": "2026-10-05T15:15:50.664Z",
+          "status": 200,
+          "headers": {
+            "contentType": "application/json; charset=utf-8",
+            "retryAfter": null,
+            "cacheControl": "no-store",
+            "nosniff": "nosniff"
+          },
+          "body": {
+            "result": {
+              "id": "drogas-vasoativas",
+              "main": [
+                "6,56",
+                "mL/h"
+              ],
+              "label": "Conversão de vazão",
+              "raw": {
+                "conc": 64,
+                "vazao": 6.5625,
+                "dose": 0.1
+              },
+              "methodVersion": "Conversão dimensional de princípio ativo; sem faixas de dose",
+              "clinicalValidation": "not-performed"
+            }
+          },
+          "responseSha256": "60c5ef9b72ca681b511b62c77a02facffc0ee4cd8a23cb33b9042b372f4db391",
+          "bytes": 253,
+          "elapsedMs": 3.5397999999986496
+        }
+      ],
+      "observed": {
+        "url": "http://127.0.0.1:3062/api/tools/drogas-vasoativas/calculate",
+        "startedAt": "2026-10-05T15:15:50.664Z",
+        "status": 200,
+        "headers": {
+          "contentType": "application/json; charset=utf-8",
+          "retryAfter": null,
+          "cacheControl": "no-store",
+          "nosniff": "nosniff"
+        },
+        "body": {
+          "result": {
+            "id": "drogas-vasoativas",
+            "main": [
+              "6,56",
+              "mL/h"
+            ],
+            "label": "Conversão de vazão",
+            "raw": {
+              "conc": 64,
+              "vazao": 6.5625,
+              "dose": 0.1
+            },
+            "methodVersion": "Conversão dimensional de princípio ativo; sem faixas de dose",
+            "clinicalValidation": "not-performed"
+          }
+        },
+        "responseSha256": "60c5ef9b72ca681b511b62c77a02facffc0ee4cd8a23cb33b9042b372f4db391",
+        "bytes": 253,
+        "elapsedMs": 3.5397999999986496
+      },
+      "evaluation": {
+        "checks": [
+          {
+            "at": "status",
+            "expected": 200,
+            "obtained": 200,
+            "passed": true
+          },
+          {
+            "at": "result-object",
+            "expected": true,
+            "obtained": true,
+            "passed": true
+          },
+          {
+            "at": "result.main",
+            "expected": "6,56",
+            "obtained": "6,56",
+            "scope": "Recorded source reference",
+            "passed": true
+          },
+          {
+            "at": "result.raw.conc",
+            "expected": 64,
+            "obtained": 64,
+            "tolerance": 1e-9,
+            "difference": 0,
+            "scope": "Recorded rounded source reference",
+            "passed": true
+          },
+          {
+            "at": "result.raw.vazao",
+            "expected": 6.5625,
+            "obtained": 6.5625,
+            "tolerance": 1e-9,
+            "difference": 0,
+            "scope": "Recorded rounded source reference",
+            "passed": true
+          },
+          {
+            "at": "result.raw.dose",
+            "expected": 0.1,
+            "obtained": 0.1,
+            "tolerance": 1e-9,
+            "difference": 0,
+            "scope": "Recorded rounded source reference",
+            "passed": true
+          },
+          {
+            "at": "regression.result.raw.conc",
+            "expected": 64,
+            "obtained": 64,
+            "tolerance": 1e-10,
+            "difference": 0,
+            "scope": "Existing precise source-audit transport regression, not independent formula validation",
+            "passed": true
+          },
+          {
+            "at": "regression.result.raw.vazao",
+            "expected": 6.5625,
+            "obtained": 6.5625,
+            "tolerance": 1e-10,
+            "difference": 0,
+            "scope": "Existing precise source-audit transport regression, not independent formula validation",
+            "passed": true
+          },
+          {
+            "at": "regression.result.raw.dose",
+            "expected": 0.1,
+            "obtained": 0.1,
+            "tolerance": 1e-10,
+            "difference": 0,
+            "scope": "Existing precise source-audit transport regression, not independent formula validation",
+            "passed": true
+          },
+          {
+            "at": "regression.result.main.length",
+            "expected": 2,
+            "obtained": 2,
+            "scope": "Existing source-audit public representation regression",
+            "passed": true
+          },
+          {
+            "at": "regression.result.main[0]",
+            "expected": "6,56",
+            "obtained": "6,56",
+            "scope": "Existing source-audit public representation regression",
+            "passed": true
+          },
+          {
+            "at": "regression.result.main[1]",
+            "expected": "mL/h",
+            "obtained": "mL/h",
+            "scope": "Existing source-audit public representation regression",
+            "passed": true
+          }
+        ],
+        "notCompared": []
+      },
+      "status": "passed",
+      "error": null
+    },
+    {
+      "id": "drogas-vasoativas",
+      "kind": "native-source-reference",
+      "index": 1,
+      "name": "Conversão inversa peso70 vazão6,5625",
+      "originalInput": {
+        "droga": "nora",
+        "modo": "vazao",
+        "unidade": "kg",
+        "massa": 16,
+        "volume": 250,
+        "peso": 70,
+        "dose": null,
+        "contexto": "1",
+        "vazao": 6.5625
+      },
+      "input": {
+        "droga": "nora",
+        "modo": "vazao",
+        "unidade": "kg",
+        "massa": 16,
+        "volume": 250,
+        "peso": 70,
+        "dose": null,
+        "contexto": "1",
+        "vazao": 6.5625
+      },
+      "amendments": [],
+      "expected": {
+        "raw": {
+          "conc": 64,
+          "dose": 0.1,
+          "vazao": 6.5625
+        },
+        "main": "0,1000",
+        "tol": 1e-9
+      },
+      "recordedResult": {
+        "main": [
+          "0,1000",
+          "mcg/kg/min"
+        ],
+        "label": "Conversão de dose",
+        "raw": {
+          "conc": 64,
+          "dose": 0.1,
+          "vazao": 6.5625
+        }
+      },
+      "provenance": {
+        "bank": {
+          "file": "reports/review-20261003/source-cases-audit.json",
+          "sha256": "da6d27d65bcaed56528da83bd0ffaa3d407fc467ea7f9cb67ec40a1a78c6febf",
+          "bytes": 885399
+        },
+        "canonical": {
+          "file": "deliveries/elucenia-next-hostinger-r5/private/canonical-medical-tools.json",
+          "sha256": "988c58b5409ecc0df7e05193d88c7df930af9ce187b0688534a31f6d627ee4ad",
+          "bytes": 29045565
+        },
+        "scope": "Existing recorded source expectations and precise source-audit transport baseline; no newly derived independent oracle"
+      },
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:3062/api/tools/drogas-vasoativas/calculate",
+        "origin": "http://127.0.0.1:3062",
+        "payload": {
+          "input": {
+            "droga": "nora",
+            "modo": "vazao",
+            "unidade": "kg",
+            "massa": 16,
+            "volume": 250,
+            "peso": 70,
+            "dose": null,
+            "contexto": "1",
+            "vazao": 6.5625
+          }
+        }
+      },
+      "attempts": [
+        {
+          "url": "http://127.0.0.1:3062/api/tools/drogas-vasoativas/calculate",
+          "startedAt": "2026-10-05T15:15:50.973Z",
+          "status": 200,
+          "headers": {
+            "contentType": "application/json; charset=utf-8",
+            "retryAfter": null,
+            "cacheControl": "no-store",
+            "nosniff": "nosniff"
+          },
+          "body": {
+            "result": {
+              "id": "drogas-vasoativas",
+              "main": [
+                "0,1000",
+                "mcg/kg/min"
+              ],
+              "label": "Conversão de dose",
+              "raw": {
+                "conc": 64,
+                "dose": 0.1,
+                "vazao": 6.5625
+              },
+              "methodVersion": "Conversão dimensional de princípio ativo; sem faixas de dose",
+              "clinicalValidation": "not-performed"
+            }
+          },
+          "responseSha256": "47da9ef8a263fe85ac885243a5d0de330f0dd6d6b4e7cbcd991e49cea4b965af",
+          "bytes": 259,
+          "elapsedMs": 5.208899999997811
+        }
+      ],
+      "observed": {
+        "url": "http://127.0.0.1:3062/api/tools/drogas-vasoativas/calculate",
+        "startedAt": "2026-10-05T15:15:50.973Z",
+        "status": 200,
+        "headers": {
+          "contentType": "application/json; charset=utf-8",
+          "retryAfter": null,
+          "cacheControl": "no-store",
+          "nosniff": "nosniff"
+        },
+        "body": {
+          "result": {
+            "id": "drogas-vasoativas",
+            "main": [
+              "0,1000",
+              "mcg/kg/min"
+            ],
+            "label": "Conversão de dose",
+            "raw": {
+              "conc": 64,
+              "dose": 0.1,
+              "vazao": 6.5625
+            },
+            "methodVersion": "Conversão dimensional de princípio ativo; sem faixas de dose",
+            "clinicalValidation": "not-performed"
+          }
+        },
+        "responseSha256": "47da9ef8a263fe85ac885243a5d0de330f0dd6d6b4e7cbcd991e49cea4b965af",
+        "bytes": 259,
+        "elapsedMs": 5.208899999997811
+      },
+      "evaluation": {
+        "checks": [
+          {
+            "at": "status",
+            "expected": 200,
+            "obtained": 200,
+            "passed": true
+          },
+          {
+            "at": "result-object",
+            "expected": true,
+            "obtained": true,
+            "passed": true
+          },
+          {
+            "at": "result.main",
+            "expected": "0,1000",
+            "obtained": "0,1000",
+            "scope": "Recorded source reference",
+            "passed": true
+          },
+          {
+            "at": "result.raw.conc",
+            "expected": 64,
+            "obtained": 64,
+            "tolerance": 1e-9,
+            "difference": 0,
+            "scope": "Recorded rounded source reference",
+            "passed": true
+          },
+          {
+            "at": "result.raw.dose",
+            "expected": 0.1,
+            "obtained": 0.1,
+            "tolerance": 1e-9,
+            "difference": 0,
+            "scope": "Recorded rounded source reference",
+            "passed": true
+          },
+          {
+            "at": "result.raw.vazao",
+            "expected": 6.5625,
+            "obtained": 6.5625,
+            "tolerance": 1e-9,
+            "difference": 0,
+            "scope": "Recorded rounded source reference",
+            "passed": true
+          },
+          {
+            "at": "regression.result.raw.conc",
+            "expected": 64,
+            "obtained": 64,
+            "tolerance": 1e-10,
+            "difference": 0,
+            "scope": "Existing precise source-audit transport regression, not independent formula validation",
+            "passed": true
+          },
+          {
+            "at": "regression.result.raw.dose",
+            "expected": 0.1,
+            "obtained": 0.1,
+            "tolerance": 1e-10,
+            "difference": 0,
+            "scope": "Existing precise source-audit transport regression, not independent formula validation",
+            "passed": true
+          },
+          {
+            "at": "regression.result.raw.vazao",
+            "expected": 6.5625,
+            "obtained": 6.5625,
+            "tolerance": 1e-10,
+            "difference": 0,
+            "scope": "Existing precise source-audit transport regression, not independent formula validation",
+            "passed": true
+          },
+          {
+            "at": "regression.result.main.length",
+            "expected": 2,
+            "obtained": 2,
+            "scope": "Existing source-audit public representation regression",
+            "passed": true
+          },
+          {
+            "at": "regression.result.main[0]",
+            "expected": "0,1000",
+            "obtained": "0,1000",
+            "scope": "Existing source-audit public representation regression",
+            "passed": true
+          },
+          {
+            "at": "regression.result.main[1]",
+            "expected": "mcg/kg/min",
+            "obtained": "mcg/kg/min",
+            "scope": "Existing source-audit public representation regression",
+            "passed": true
+          }
+        ],
+        "notCompared": []
+      },
+      "status": "passed",
+      "error": null
+    },
+    {
+      "id": "drogas-vasoativas",
+      "kind": "native-source-reference",
+      "index": 2,
+      "name": "Unidade absoluta dispensa peso",
+      "originalInput": {
+        "droga": "nora",
+        "modo": "dose",
+        "unidade": "min",
+        "massa": 4,
+        "volume": 1000,
+        "peso": null,
+        "dose": 8,
+        "contexto": "1"
+      },
+      "input": {
+        "droga": "nora",
+        "modo": "dose",
+        "unidade": "min",
+        "massa": 4,
+        "volume": 1000,
+        "peso": null,
+        "dose": 8,
+        "contexto": "1"
+      },
+      "amendments": [],
+      "expected": {
+        "raw": {
+          "conc": 4,
+          "vazao": 120,
+          "dose": 8
+        },
+        "main": "120,00"
+      },
+      "recordedResult": {
+        "main": [
+          "120,00",
+          "mL/h"
+        ],
+        "label": "Conversão de vazão",
+        "raw": {
+          "conc": 4,
+          "vazao": 120,
+          "dose": 8
+        }
+      },
+      "provenance": {
+        "bank": {
+          "file": "reports/review-20261003/source-cases-audit.json",
+          "sha256": "da6d27d65bcaed56528da83bd0ffaa3d407fc467ea7f9cb67ec40a1a78c6febf",
+          "bytes": 885399
+        },
+        "canonical": {
+          "file": "deliveries/elucenia-next-hostinger-r5/private/canonical-medical-tools.json",
+          "sha256": "988c58b5409ecc0df7e05193d88c7df930af9ce187b0688534a31f6d627ee4ad",
+          "bytes": 29045565
+        },
+        "scope": "Existing recorded source expectations and precise source-audit transport baseline; no newly derived independent oracle"
+      },
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:3062/api/tools/drogas-vasoativas/calculate",
+        "origin": "http://127.0.0.1:3062",
+        "payload": {
+          "input": {
+            "droga": "nora",
+            "modo": "dose",
+            "unidade": "min",
+            "massa": 4,
+            "volume": 1000,
+            "peso": null,
+            "dose": 8,
+            "contexto": "1"
+          }
+        }
+      },
+      "attempts": [
+        {
+          "url": "http://127.0.0.1:3062/api/tools/drogas-vasoativas/calculate",
+          "startedAt": "2026-10-05T15:15:51.284Z",
+          "status": 200,
+          "headers": {
+            "contentType": "application/json; charset=utf-8",
+            "retryAfter": null,
+            "cacheControl": "no-store",
+            "nosniff": "nosniff"
+          },
+          "body": {
+            "result": {
+              "id": "drogas-vasoativas",
+              "main": [
+                "120,00",
+                "mL/h"
+              ],
+              "label": "Conversão de vazão",
+              "raw": {
+                "conc": 4,
+                "vazao": 120,
+                "dose": 8
+              },
+              "methodVersion": "Conversão dimensional de princípio ativo; sem faixas de dose",
+              "clinicalValidation": "not-performed"
+            }
+          },
+          "responseSha256": "b9527dc10ad691ccd94343e95303b093427240f6bdcda6eb1b9f20e1b23af064",
+          "bytes": 249,
+          "elapsedMs": 2.5086000000010245
+        }
+      ],
+      "observed": {
+        "url": "http://127.0.0.1:3062/api/tools/drogas-vasoativas/calculate",
+        "startedAt": "2026-10-05T15:15:51.284Z",
+        "status": 200,
+        "headers": {
+          "contentType": "application/json; charset=utf-8",
+          "retryAfter": null,
+          "cacheControl": "no-store",
+          "nosniff": "nosniff"
+        },
+        "body": {
+          "result": {
+            "id": "drogas-vasoativas",
+            "main": [
+              "120,00",
+              "mL/h"
+            ],
+            "label": "Conversão de vazão",
+            "raw": {
+              "conc": 4,
+              "vazao": 120,
+              "dose": 8
+            },
+            "methodVersion": "Conversão dimensional de princípio ativo; sem faixas de dose",
+            "clinicalValidation": "not-performed"
+          }
+        },
+        "responseSha256": "b9527dc10ad691ccd94343e95303b093427240f6bdcda6eb1b9f20e1b23af064",
+        "bytes": 249,
+        "elapsedMs": 2.5086000000010245
+      },
+      "evaluation": {
+        "checks": [
+          {
+            "at": "status",
+            "expected": 200,
+            "obtained": 200,
+            "passed": true
+          },
+          {
+            "at": "result-object",
+            "expected": true,
+            "obtained": true,
+            "passed": true
+          },
+          {
+            "at": "result.main",
+            "expected": "120,00",
+            "obtained": "120,00",
+            "scope": "Recorded source reference",
+            "passed": true
+          },
+          {
+            "at": "result.raw.conc",
+            "expected": 4,
+            "obtained": 4,
+            "tolerance": 1e-8,
+            "difference": 0,
+            "scope": "Recorded rounded source reference",
+            "passed": true
+          },
+          {
+            "at": "result.raw.vazao",
+            "expected": 120,
+            "obtained": 120,
+            "tolerance": 1e-8,
+            "difference": 0,
+            "scope": "Recorded rounded source reference",
+            "passed": true
+          },
+          {
+            "at": "result.raw.dose",
+            "expected": 8,
+            "obtained": 8,
+            "tolerance": 1e-8,
+            "difference": 0,
+            "scope": "Recorded rounded source reference",
+            "passed": true
+          },
+          {
+            "at": "regression.result.raw.conc",
+            "expected": 4,
+            "obtained": 4,
+            "tolerance": 1e-10,
+            "difference": 0,
+            "scope": "Existing precise source-audit transport regression, not independent formula validation",
+            "passed": true
+          },
+          {
+            "at": "regression.result.raw.vazao",
+            "expected": 120,
+            "obtained": 120,
+            "tolerance": 1.2e-10,
+            "difference": 0,
+            "scope": "Existing precise source-audit transport regression, not independent formula validation",
+            "passed": true
+          },
+          {
+            "at": "regression.result.raw.dose",
+            "expected": 8,
+            "obtained": 8,
+            "tolerance": 1e-10,
+            "difference": 0,
+            "scope": "Existing precise source-audit transport regression, not independent formula validation",
+            "passed": true
+          },
+          {
+            "at": "regression.result.main.length",
+            "expected": 2,
+            "obtained": 2,
+            "scope": "Existing source-audit public representation regression",
+            "passed": true
+          },
+          {
+            "at": "regression.result.main[0]",
+            "expected": "120,00",
+            "obtained": "120,00",
+            "scope": "Existing source-audit public representation regression",
+            "passed": true
+          },
+          {
+            "at": "regression.result.main[1]",
+            "expected": "mL/h",
+            "obtained": "mL/h",
+            "scope": "Existing source-audit public representation regression",
+            "passed": true
+          }
+        ],
+        "notCompared": []
+      },
+      "status": "passed",
+      "error": null
+    },
+    {
+      "id": "drogas-vasoativas",
+      "kind": "native-source-reference",
+      "index": 3,
+      "name": "Concentração base4mg/1000mL corresponde à bula",
+      "originalInput": {
+        "droga": "nora",
+        "modo": "vazao",
+        "unidade": "min",
+        "massa": 4,
+        "volume": 1000,
+        "peso": null,
+        "dose": null,
+        "contexto": "1",
+        "vazao": 120
+      },
+      "input": {
+        "droga": "nora",
+        "modo": "vazao",
+        "unidade": "min",
+        "massa": 4,
+        "volume": 1000,
+        "peso": null,
+        "dose": null,
+        "contexto": "1",
+        "vazao": 120
+      },
+      "amendments": [],
+      "expected": {
+        "raw": {
+          "conc": 4,
+          "dose": 8,
+          "vazao": 120
+        },
+        "main": "8,0000"
+      },
+      "recordedResult": {
+        "main": [
+          "8,0000",
+          "mcg/min"
+        ],
+        "label": "Conversão de dose",
+        "raw": {
+          "conc": 4,
+          "dose": 8,
+          "vazao": 120
+        }
+      },
+      "provenance": {
+        "bank": {
+          "file": "reports/review-20261003/source-cases-audit.json",
+          "sha256": "da6d27d65bcaed56528da83bd0ffaa3d407fc467ea7f9cb67ec40a1a78c6febf",
+          "bytes": 885399
+        },
+        "canonical": {
+          "file": "deliveries/elucenia-next-hostinger-r5/private/canonical-medical-tools.json",
+          "sha256": "988c58b5409ecc0df7e05193d88c7df930af9ce187b0688534a31f6d627ee4ad",
+          "bytes": 29045565
+        },
+        "scope": "Existing recorded source expectations and precise source-audit transport baseline; no newly derived independent oracle"
+      },
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:3062/api/tools/drogas-vasoativas/calculate",
+        "origin": "http://127.0.0.1:3062",
+        "payload": {
+          "input": {
+            "droga": "nora",
+            "modo": "vazao",
+            "unidade": "min",
+            "massa": 4,
+            "volume": 1000,
+            "peso": null,
+            "dose": null,
+            "contexto": "1",
+            "vazao": 120
+          }
+        }
+      },
+      "attempts": [
+        {
+          "url": "http://127.0.0.1:3062/api/tools/drogas-vasoativas/calculate",
+          "startedAt": "2026-10-05T15:15:51.597Z",
+          "status": 200,
+          "headers": {
+            "contentType": "application/json; charset=utf-8",
+            "retryAfter": null,
+            "cacheControl": "no-store",
+            "nosniff": "nosniff"
+          },
+          "body": {
+            "result": {
+              "id": "drogas-vasoativas",
+              "main": [
+                "8,0000",
+                "mcg/min"
+              ],
+              "label": "Conversão de dose",
+              "raw": {
+                "conc": 4,
+                "dose": 8,
+                "vazao": 120
+              },
+              "methodVersion": "Conversão dimensional de princípio ativo; sem faixas de dose",
+              "clinicalValidation": "not-performed"
+            }
+          },
+          "responseSha256": "d6a20e3864fbbef8483aa56addedbd20f6bc6c2666dc188db720644d1362b085",
+          "bytes": 250,
+          "elapsedMs": 2.4958000000042375
+        }
+      ],
+      "observed": {
+        "url": "http://127.0.0.1:3062/api/tools/drogas-vasoativas/calculate",
+        "startedAt": "2026-10-05T15:15:51.597Z",
+        "status": 200,
+        "headers": {
+          "contentType": "application/json; charset=utf-8",
+          "retryAfter": null,
+          "cacheControl": "no-store",
+          "nosniff": "nosniff"
+        },
+        "body": {
+          "result": {
+            "id": "drogas-vasoativas",
+            "main": [
+              "8,0000",
+              "mcg/min"
+            ],
+            "label": "Conversão de dose",
+            "raw": {
+              "conc": 4,
+              "dose": 8,
+              "vazao": 120
+            },
+            "methodVersion": "Conversão dimensional de princípio ativo; sem faixas de dose",
+            "clinicalValidation": "not-performed"
+          }
+        },
+        "responseSha256": "d6a20e3864fbbef8483aa56addedbd20f6bc6c2666dc188db720644d1362b085",
+        "bytes": 250,
+        "elapsedMs": 2.4958000000042375
+      },
+      "evaluation": {
+        "checks": [
+          {
+            "at": "status",
+            "expected": 200,
+            "obtained": 200,
+            "passed": true
+          },
+          {
+            "at": "result-object",
+            "expected": true,
+            "obtained": true,
+            "passed": true
+          },
+          {
+            "at": "result.main",
+            "expected": "8,0000",
+            "obtained": "8,0000",
+            "scope": "Recorded source reference",
+            "passed": true
+          },
+          {
+            "at": "result.raw.conc",
+            "expected": 4,
+            "obtained": 4,
+            "tolerance": 1e-8,
+            "difference": 0,
+            "scope": "Recorded rounded source reference",
+            "passed": true
+          },
+          {
+            "at": "result.raw.dose",
+            "expected": 8,
+            "obtained": 8,
+            "tolerance": 1e-8,
+            "difference": 0,
+            "scope": "Recorded rounded source reference",
+            "passed": true
+          },
+          {
+            "at": "result.raw.vazao",
+            "expected": 120,
+            "obtained": 120,
+            "tolerance": 1e-8,
+            "difference": 0,
+            "scope": "Recorded rounded source reference",
+            "passed": true
+          },
+          {
+            "at": "regression.result.raw.conc",
+            "expected": 4,
+            "obtained": 4,
+            "tolerance": 1e-10,
+            "difference": 0,
+            "scope": "Existing precise source-audit transport regression, not independent formula validation",
+            "passed": true
+          },
+          {
+            "at": "regression.result.raw.dose",
+            "expected": 8,
+            "obtained": 8,
+            "tolerance": 1e-10,
+            "difference": 0,
+            "scope": "Existing precise source-audit transport regression, not independent formula validation",
+            "passed": true
+          },
+          {
+            "at": "regression.result.raw.vazao",
+            "expected": 120,
+            "obtained": 120,
+            "tolerance": 1.2e-10,
+            "difference": 0,
+            "scope": "Existing precise source-audit transport regression, not independent formula validation",
+            "passed": true
+          },
+          {
+            "at": "regression.result.main.length",
+            "expected": 2,
+            "obtained": 2,
+            "scope": "Existing source-audit public representation regression",
+            "passed": true
+          },
+          {
+            "at": "regression.result.main[0]",
+            "expected": "8,0000",
+            "obtained": "8,0000",
+            "scope": "Existing source-audit public representation regression",
+            "passed": true
+          },
+          {
+            "at": "regression.result.main[1]",
+            "expected": "mcg/min",
+            "obtained": "mcg/min",
+            "scope": "Existing source-audit public representation regression",
+            "passed": true
+          }
+        ],
+        "notCompared": []
+      },
+      "status": "passed",
+      "error": null
+    }
+  ],
+  "endBindings": true
+}

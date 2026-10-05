@@ -1,0 +1,270 @@
+{
+  "schema": "elucenia-current-per-tool-local-publication-candidate",
+  "id": "drogas-vasoativas",
+  "repository": "Elucenia/tool-drogas-vasoativas",
+  "parentCommitSha": "1d4e031f9abb2168007ba3fcc2f14bccfbe93e2a",
+  "baseTreeSha": "c48801b7f7244b746351eb756d842914fb697d53",
+  "protectedFiles": {
+    "LICENSE": {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "size": 11358,
+      "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/d645695673349e3947e8e5ae42332d0ac3164cd7"
+    },
+    "NOTICE": {
+      "path": "NOTICE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e518c2adcdcd91b3a1f679a0ef9d1092e2d14370",
+      "size": 1633,
+      "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/e518c2adcdcd91b3a1f679a0ef9d1092e2d14370"
+    },
+    "AUTHORSHIP.md": {
+      "path": "AUTHORSHIP.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "58d594dafb42fc5c2d89b4e5e1f3d5daad9f391d",
+      "size": 3299,
+      "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/58d594dafb42fc5c2d89b4e5e1f3d5daad9f391d"
+    },
+    "CITATION.cff": {
+      "path": "CITATION.cff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7777e6d55b890ddb649bf9e05c6c5de256b397b2",
+      "size": 914,
+      "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/7777e6d55b890ddb649bf9e05c6c5de256b397b2"
+    },
+    "SECURITY.md": {
+      "path": "SECURITY.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44eafb996937916cbe53e24fa9c5208fe03d5767",
+      "size": 894,
+      "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/44eafb996937916cbe53e24fa9c5208fe03d5767"
+    },
+    "CONTRIBUTING.md": {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f856534d8728432f7e44dc956a98bf105046e215",
+      "size": 1468,
+      "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/f856534d8728432f7e44dc956a98bf105046e215"
+    },
+    ".github/workflows/ci.yml": {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d3f2f34aa2e948d30695d82d64361467d9e6485",
+      "size": 279,
+      "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/7d3f2f34aa2e948d30695d82d64361467d9e6485"
+    },
+    ".gitattributes": {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6313b56c57848efce05faa7aa7e901ccfc2886ea",
+      "size": 19,
+      "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/6313b56c57848efce05faa7aa7e901ccfc2886ea"
+    },
+    ".gitignore": {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e375bd25cf1a574310ac4c7af0299884556e81e1",
+      "size": 42,
+      "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/e375bd25cf1a574310ac4c7af0299884556e81e1"
+    }
+  },
+  "oldCandidate": {
+    "manifest": {
+      "file": "reports/review-20261003/github-publication-candidate-final36-v4.json",
+      "bytes": 6823260,
+      "sha256": "a3c528b12d7b5416fa0e62dda9e5106864bae7ff86710fa765934b5a3069e16c"
+    },
+    "rowId": "drogas-vasoativas",
+    "publicationProvenance": {
+      "file": "reports/review-20261003/github-publication-candidates-final36-v4/drogas-vasoativas/publication-provenance.json",
+      "bytes": 5296,
+      "sha256": "5ede2c8cec68a03a60cf035ef4843b246b520de3b5249f2116e0f1f78a7437f7"
+    },
+    "integrationProvenance": {
+      "file": "reports/review-20261003/github-publication-candidates-final36-v4/drogas-vasoativas/provenance.json",
+      "bytes": 59871,
+      "sha256": "2d25dd2a7db91f49225e73293055a741e53bd6a268b372f28a2c6e69b11ddb72"
+    }
+  },
+  "currentSource": {
+    "file": "apps/website/private/tool-code/drogas-vasoativas/calculator.js",
+    "bytes": 495,
+    "sha256": "cbf40658efb4b750a59de655fa3ef414431f616d6b985a81fbd92ea17c36ad25"
+  },
+  "sourceToolSha256": "8279693b481beb14528ae6639d52ba1b991114abca35cd33630d4cc9d0f894e5",
+  "methodVersion": "Conversão dimensional de princípio ativo; sem faixas de dose",
+  "implementationVersion": "drogas-vasoativas@native-2026-10-04+cbf40658efb4",
+  "browserBundleSha256": "be98845369641b7216420addaee9e30c717fc5ff6163924ca53fb9517daaf5df",
+  "graph": {
+    "entry": "tool-code/drogas-vasoativas/calculator.js",
+    "modules": [
+      {
+        "file": "tool-code/drogas-vasoativas/calculator.js",
+        "bytes": 495,
+        "sha256": "cbf40658efb4b750a59de655fa3ef414431f616d6b985a81fbd92ea17c36ad25"
+      },
+      {
+        "file": "restored-methods.cjs",
+        "bytes": 5095,
+        "sha256": "94ed5091e1b87984f9e5174857c82d3884f298a2c313356f9203110cc299a723"
+      },
+      {
+        "file": "restoration-original-tools.json",
+        "bytes": 2485,
+        "sha256": "b3be270b84ddab92566e62c8786db488bc1faa7674687b4348b0a50751b3b952"
+      }
+    ],
+    "transforms": [
+      {
+        "file": "restored-methods.cjs",
+        "sourceSha256": "630dccade18742e4bc364b32f4ef4d6bc75aeceb262face8ddae806be7962c23",
+        "kind": "Deterministic AST selection of one existing define call plus unchanged shared arithmetic/schema helpers",
+        "selectedId": "drogas-vasoativas",
+        "otherMethodDefinitionsIncluded": 0
+      },
+      {
+        "file": "restoration-original-tools.json",
+        "sourceSha256": "ccee00665e024104d254acf77a43609acb02d593e016ee8c6b7cebf3769da389",
+        "kind": "One original field/source contract only; no other tools, reference banks or original results",
+        "selectedId": "drogas-vasoativas",
+        "keys": [
+          "id",
+          "title",
+          "fields",
+          "sources"
+        ]
+      }
+    ]
+  },
+  "currentActualHttpEvidence": {
+    "file": "reports/review-20261005-completion/deploy-lock/r5-all-calculators-http-results.json",
+    "bytes": 7105457,
+    "sha256": "be450b3731f8b30a13e0b36bf1f2f579bce00de325c5622bc3e526235c1c79f7"
+  },
+  "tests": {
+    "cases": 4,
+    "sourceNodeParityPassed": true,
+    "browserVmParityPassed": true,
+    "independentOracleDerived": false,
+    "actualBrowserDOMVerified": false
+  },
+  "rights": {
+    "historicalPayloadLicenseDeclaration": "Apache-2.0",
+    "currentIntegrationPackageLicenseDeclaration": "MIT",
+    "currentLegalFiles": [
+      {
+        "file": "apps/command-center/private/tool-code/drogas-vasoativas/LICENSE",
+        "bytes": 1229,
+        "sha256": "51c010d285894558695812b9883d9c9ae7c9c89526f43597917e778965e65d93"
+      },
+      {
+        "file": "apps/command-center/private/tool-code/drogas-vasoativas/NOTICE.md",
+        "bytes": 1183,
+        "sha256": "b7d5eaa1074d1673caf885ac49b38e9b54b2c6086b45072eacf7b3fe139d8a6d"
+      }
+    ],
+    "protectedFilesPreservedFromOldPayload": [],
+    "protectedRemoteAttributionReferences": {
+      "LICENSE": {
+        "path": "LICENSE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+        "size": 11358,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/d645695673349e3947e8e5ae42332d0ac3164cd7"
+      },
+      "NOTICE": {
+        "path": "NOTICE",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e518c2adcdcd91b3a1f679a0ef9d1092e2d14370",
+        "size": 1633,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/e518c2adcdcd91b3a1f679a0ef9d1092e2d14370"
+      },
+      "AUTHORSHIP.md": {
+        "path": "AUTHORSHIP.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "58d594dafb42fc5c2d89b4e5e1f3d5daad9f391d",
+        "size": 3299,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/58d594dafb42fc5c2d89b4e5e1f3d5daad9f391d"
+      },
+      "CITATION.cff": {
+        "path": "CITATION.cff",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7777e6d55b890ddb649bf9e05c6c5de256b397b2",
+        "size": 914,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/7777e6d55b890ddb649bf9e05c6c5de256b397b2"
+      },
+      "SECURITY.md": {
+        "path": "SECURITY.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "44eafb996937916cbe53e24fa9c5208fe03d5767",
+        "size": 894,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/44eafb996937916cbe53e24fa9c5208fe03d5767"
+      },
+      "CONTRIBUTING.md": {
+        "path": "CONTRIBUTING.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f856534d8728432f7e44dc956a98bf105046e215",
+        "size": 1468,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/f856534d8728432f7e44dc956a98bf105046e215"
+      },
+      ".github/workflows/ci.yml": {
+        "path": ".github/workflows/ci.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7d3f2f34aa2e948d30695d82d64361467d9e6485",
+        "size": 279,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/7d3f2f34aa2e948d30695d82d64361467d9e6485"
+      },
+      ".gitattributes": {
+        "path": ".gitattributes",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6313b56c57848efce05faa7aa7e901ccfc2886ea",
+        "size": 19,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/6313b56c57848efce05faa7aa7e901ccfc2886ea"
+      },
+      ".gitignore": {
+        "path": ".gitignore",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e375bd25cf1a574310ac4c7af0299884556e81e1",
+        "size": 42,
+        "url": "https://api.github.com/repos/Elucenia/tool-drogas-vasoativas/git/blobs/e375bd25cf1a574310ac4c7af0299884556e81e1"
+      }
+    },
+    "sourceSpecificEvidence": {
+      "sourceSpecificStatus": "not-approved-by-this-consolidation",
+      "sourceSpecificEvidence": null,
+      "wholeInstrumentApproval": false,
+      "oldCandidateInstrumentRightsApproval": "not-performed"
+    },
+    "scope": "Historical Apache declaration and current MIT integration notices retained with exact sources; no relicensing or instrument approval inferred",
+    "reviewRequired": true,
+    "divergences": [
+      "Historical payload and current package declare different license labels; scope/authorship mapping must be reviewed before distribution"
+    ],
+    "wholeInstrumentApproval": false
+  },
+  "appWrites": false,
+  "externalMutations": false,
+  "publicationPerformed": false,
+  "externalPublicationReady": false,
+  "clinicalApproval": false,
+  "professionalLanguageApproval": false
+}

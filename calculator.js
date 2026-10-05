@@ -1,9 +1,2 @@
-/* tool-drogas-vasoativas · ELUCENIA · https://github.com/Elucenia/tool-drogas-vasoativas
-   Copyright (c) 2026 ELUCENIA · Felipe Guedes (fgxdev.com). Licensed under the Apache License 2.0: keep this notice and the NOTICE file, and mark your changes.
-   Standalone integration. Package metadata and rights: README.md. */
-(function(root){'use strict';
-function freeze(value){if(value&&typeof value==='object'){for(const item of Object.values(value))freeze(item);Object.freeze(value);}return value;}
-const TOOL=freeze({"id":"drogas-vasoativas","title":"Infusão de drogas vasoativas","fields":[["droga","Droga","sel",{"opts":{"nora":"Noradrenalina","adre":"Adrenalina","dopa":"Dopamina","dobuta":"Dobutamina","fenil":"Fenilefrina","milri":"Milrinona","outra":"Outra droga"}}],["modo","Calcular","radio",{"opts":{"dose":"Vazão a partir da dose","vazao":"Dose a partir da vazão"}}],["unidade","Unidade da dose","radio",{"opts":{"kg":"mcg/kg/min","min":"mcg/min"}}],["massa","Quantidade de droga na solução","num",{"min":0.1,"max":2000,"step":0.1,"unit":"mg","ph":"16"}],["volume","Volume total da solução","num",{"min":10,"max":1000,"unit":"mL","ph":"250"}],["peso","Peso (para mcg/kg/min)","num",{"min":2,"max":300,"step":0.1,"unit":"kg","ph":"70","opt":true}],["dose","Dose","num",{"min":0.001,"max":100,"step":0.001,"unit":"mcg/kg/min ou mcg/min","ph":"0,1","opt":true}],["vazao","Vazão da bomba","num",{"min":0.1,"max":999,"step":0.1,"unit":"mL/h","ph":"10","opt":true}]],"config":null,"reviewStatus":"restricted","clinicalValidation":"not-performed"});
-function calculate(){return {error:'Cálculo suspenso: consulte a revisão e a fonte oficial.',code:'REVIEW_REQUIRED',id:TOOL.id};}
-const api=Object.freeze({metadata:TOOL,calculate});if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.EluceniaTool=api;
-})(typeof globalThis!=='undefined'?globalThis:this);
+/* Per-tool entry; original adapter bytes and method notices are preserved. */
+module.exports=require('./engine/tool-code/drogas-vasoativas/calculator.js');

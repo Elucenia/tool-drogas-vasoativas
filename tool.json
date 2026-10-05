@@ -2,16 +2,16 @@
   "tool": {
     "id": "drogas-vasoativas",
     "title": "Infusão de drogas vasoativas",
-    "short": "mcg/kg/min ↔ mL/h pela concentração",
-    "desc": "Converta a dose de drogas vasoativas (noradrenalina, adrenalina, dobutamina, dopamina) em vazão da bomba (mL/h) e vice-versa, pela diluição usada.",
-    "lead": "Converte a dose prescrita (mcg/kg/min ou mcg/min) em vazão da bomba de infusão (mL/h), ou a vazão em dose, a partir da quantidade de droga e do volume da solução.",
+    "short": "Conversão dimensional de concentração, dose e vazão",
+    "desc": "Converte matematicamente concentração, dose e vazão a partir de um preparo e de uma prescrição já conferidos. Não seleciona uma dose, uma faixa terapêutica ou um esquema de diluição.",
+    "lead": "Converte matematicamente concentração, dose e vazão a partir de um preparo e de uma prescrição já conferidos. Não seleciona uma dose, uma faixa terapêutica ou um esquema de diluição.",
+    "kind": "Calculadora",
     "spec": [
       "medicina-intensiva",
       "medicina-de-emergencia",
       "anestesiologia",
       "cardiologia"
     ],
-    "tier": 1,
     "fields": [
       [
         "droga",
@@ -53,7 +53,7 @@
       ],
       [
         "massa",
-        "Quantidade de droga na solução",
+        "Massa do princípio ativo em base, não do sal",
         "num",
         {
           "min": 0.1,
@@ -112,47 +112,25 @@
           "ph": "10",
           "opt": true
         }
+      ],
+      [
+        "contexto",
+        "Massa equivalente em base, bula da formulação, volume final, unidade e dose prescrita conferidos?",
+        "sel",
+        {
+          "opts": {
+            "0": "Não",
+            "1": "Sim"
+          }
+        }
       ]
     ],
-    "formula": "<p><strong>Concentração</strong> (mcg/mL) = quantidade de droga (mg) × 1.000 ÷ volume (mL).</p><p><strong>Vazão</strong> (mL/h) = dose (mcg/kg/min) × peso (kg) × 60 ÷ concentração. Para dose em mcg/min, sem o peso.</p><p><strong>Dose</strong> (mcg/kg/min) = vazão × concentração ÷ (60 × peso).</p>",
-    "table": [
-      [
-        "Droga",
-        "Faixa usual (mcg/kg/min)"
-      ],
-      [
-        "Noradrenalina",
-        "0,01 a 3"
-      ],
-      [
-        "Adrenalina",
-        "0,01 a 0,10"
-      ],
-      [
-        "Dopamina",
-        "2 a 20"
-      ],
-      [
-        "Dobutamina",
-        "2 a 20"
-      ],
-      [
-        "Fenilefrina",
-        "0,4 a 9,1"
-      ],
-      [
-        "Milrinona",
-        "0,375 a 0,75"
-      ]
-    ],
-    "table_note": "Faixas usuais segundo Overgaard e Dzavík (2008). Siga a padronização de diluições e doses do seu serviço.",
-    "tips": [
-      "Confira se a prescrição é em mcg/kg/min ou em mcg/min: a noradrenalina é prescrita nas duas unidades, e confundir as duas multiplica a dose pelo peso.",
-      "Na sepse, a noradrenalina é o vasopressor de primeira escolha (Surviving Sepsis 2021), com meta inicial de PAM ≥ 65 mmHg; vasopressina é adicionada quando a noradrenalina está entre 0,25 e 0,5 mcg/kg/min.",
-      "Soluções concentradas reduzem o volume infundido, mas pedem acesso central e bomba precisa; em acesso periférico, use diluições maiores e por pouco tempo.",
-      "Sempre dupla-cheque o cálculo com outro profissional antes de iniciar: erros de diluição são uma das causas mais comuns de evento adverso grave com vasoativos."
-    ],
+    "formula": "<p>Concentração em mcg/mL = massa do princípio ativo em mg × 1000/volume final. Vazão = dose × (peso se mcg/kg/min) × 60/concentração. Dose = vazão × concentração/[60 × (peso se necessário)].</p>",
     "sources": [
+      [
+        "DailyMed · norepinefrina · equivalência base/sal e concentração final",
+        "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=52e22892-4fc3-4f53-9f39-0b5c66da3040&version=3"
+      ],
       [
         "Overgaard CB, Dzavík V. Inotropes and vasopressors: review of physiology and clinical use in cardiovascular disease. Circulation, 2008.",
         "https://doi.org/10.1161/CIRCULATIONAHA.107.728840"
@@ -164,7 +142,7 @@
     ],
     "cases": [
       [
-        "Noradrenalina 16 mg/250 mL (64 mcg/mL), 70 kg, 0,1 mcg/kg/min: 6,6 mL/h",
+        "Vetor sintético principal de referência",
         {
           "droga": "nora",
           "modo": "dose",
@@ -172,19 +150,21 @@
           "massa": 16,
           "volume": 250,
           "peso": 70,
-          "dose": 0.1
+          "dose": 0.1,
+          "contexto": "1"
         },
         {
           "raw": {
             "conc": 64,
-            "vazao": 6.5625
+            "vazao": 6.5625,
+            "dose": 0.1
           },
-          "main": "6,6",
-          "level": "info"
+          "main": "6,56",
+          "tol": 1e-9
         }
       ],
       [
-        "Mesma solução a 10 mL/h, 70 kg: 0,152 mcg/kg/min",
+        "Conversão inversa peso70 vazão6,5625",
         {
           "droga": "nora",
           "modo": "vazao",
@@ -192,99 +172,452 @@
           "massa": 16,
           "volume": 250,
           "peso": 70,
-          "vazao": 10
+          "dose": null,
+          "contexto": "1",
+          "vazao": 6.5625
         },
         {
           "raw": {
-            "dose": 0.15238
+            "conc": 64,
+            "dose": 0.1,
+            "vazao": 6.5625
           },
-          "main": "0,152",
-          "level": "info",
-          "tol": 0.0005
+          "main": "0,1000",
+          "tol": 1e-9
         }
       ],
       [
-        "Dobutamina 250 mg/250 mL, 80 kg, 5 mcg/kg/min: 24 mL/h",
-        {
-          "droga": "dobuta",
-          "modo": "dose",
-          "unidade": "kg",
-          "massa": 250,
-          "volume": 250,
-          "peso": 80,
-          "dose": 5
-        },
-        {
-          "raw": {
-            "conc": 1000,
-            "vazao": 24
-          },
-          "level": "info"
-        }
-      ],
-      [
-        "Noradrenalina 4 mg/250 mL, 8 mcg/min: 30 mL/h",
+        "Unidade absoluta dispensa peso",
         {
           "droga": "nora",
           "modo": "dose",
           "unidade": "min",
           "massa": 4,
-          "volume": 250,
-          "dose": 8
+          "volume": 1000,
+          "peso": null,
+          "dose": 8,
+          "contexto": "1"
         },
         {
           "raw": {
-            "conc": 16,
-            "vazao": 30
+            "conc": 4,
+            "vazao": 120,
+            "dose": 8
           },
-          "level": "info"
+          "main": "120,00"
         }
       ],
       [
-        "mcg/kg/min sem peso: pede o peso",
+        "Concentração base4mg/1000mL corresponde à bula",
         {
           "droga": "nora",
-          "modo": "dose",
-          "unidade": "kg",
-          "massa": 16,
-          "volume": 250,
-          "dose": 0.1
+          "modo": "vazao",
+          "unidade": "min",
+          "massa": 4,
+          "volume": 1000,
+          "peso": null,
+          "dose": null,
+          "contexto": "1",
+          "vazao": 120
         },
         {
-          "error": true
+          "raw": {
+            "conc": 4,
+            "dose": 8,
+            "vazao": 120
+          },
+          "main": "8,0000"
         }
       ]
     ],
-    "kind": "Calculadora",
-    "config": null,
-    "clinicalReview": "pending",
     "arithmeticTest": {
       "status": "passed",
-      "testedAt": "2026-09-25",
-      "total": 5,
-      "passed": 5,
-      "failures": []
+      "testedAt": "2026-10-03",
+      "total": 4,
+      "passed": 4,
+      "failures": [],
+      "evidencePath": "reports/review-20261003/restored-methods-source-rules.json",
+      "scope": "Synthetic source-rule arithmetic checks. Independent clinical validation not performed."
     },
     "independentArithmeticTest": {
-      "status": "not-tested",
-      "testedAt": null,
-      "total": 0,
-      "passed": 0,
-      "cases": []
-    }
-  },
-  "review": {
-    "id": "drogas-vasoativas",
-    "status": "restricted",
-    "reason": "A conversão usa massa total digitada e faixas usuais sem seleção de formulação, equivalente em base/sal ou protocolo. Bula varia por produto e expressa a concentração de noradrenalina equivalente. Suspender resultados de bomba/dose até revisão farmacêutica e casos independentes por unidade.",
-    "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215700Orig1s012lbl.pdf",
-    "sourceTitle": "FDA — Norepinephrine Bitartrate in Sodium Chloride Injection",
-    "sourceDate": "2025-10 (revisão impressa na bula; arquivo FDA 2026)",
-    "publisherRegion": "Estados Unidos / FDA",
-    "checkedAt": "2026-09-25",
+      "status": "passed",
+      "testedAt": "2026-10-03",
+      "total": 37,
+      "passed": 37,
+      "evidencePath": "reports/review-20261003/restored-methods-source-rules.json",
+      "scope": "Independent expected values and source-rule boundary checks; not clinical approval.",
+      "sourceRowCount": 37,
+      "uniqueApiInputCount": 33,
+      "inputIdentity": {
+        "definition": "Distinct JSON input objects within each method after recursively sorting object keys; array order, numeric values and JSON value types preserved. Uses stored input/inputs before implicit default completion, numeric coercion or clinical feature interpretation. Identity across different methods is not collapsed. Repeated scenarios are retained and coverage status is unchanged.",
+        "audit": {
+          "file": "reports/review-20261003/independent-source-corpus-input-identity-audit-final25.json",
+          "sha256": "35d65e84c5608a5f572fce6837f0a8c101b2266f5d6eec32a3d60d2bb6b022ca"
+        },
+        "sourceRows": 37,
+        "uniqueApiInputs": 33,
+        "duplicateRows": 4,
+        "duplicates": [
+          {
+            "first": 14,
+            "repeat": 17,
+            "input": {
+              "droga": "nora",
+              "modo": "dose",
+              "unidade": "kg",
+              "massa": null,
+              "volume": 250,
+              "peso": 70,
+              "dose": 0.1,
+              "contexto": "1"
+            }
+          },
+          {
+            "first": 19,
+            "repeat": 22,
+            "input": {
+              "droga": "nora",
+              "modo": "dose",
+              "unidade": "kg",
+              "massa": 16,
+              "volume": null,
+              "peso": 70,
+              "dose": 0.1,
+              "contexto": "1"
+            }
+          },
+          {
+            "first": 4,
+            "repeat": 24,
+            "input": {
+              "droga": "nora",
+              "modo": "dose",
+              "unidade": "kg",
+              "massa": 16,
+              "volume": 250,
+              "peso": null,
+              "dose": 0.1,
+              "contexto": "1"
+            }
+          },
+          {
+            "first": 5,
+            "repeat": 28,
+            "input": {
+              "droga": "nora",
+              "modo": "dose",
+              "unidade": "kg",
+              "massa": 16,
+              "volume": 250,
+              "peso": 70,
+              "dose": null,
+              "contexto": "1"
+            }
+          }
+        ],
+        "coverageStatusUnchanged": true
+      },
+      "publicCandidateBankOmitted": true
+    },
+    "limits": "Não converte automaticamente massa do sal em base nem escolhe dose usual. É obrigatório conferir formulação; nome da droga não preenche dose, concentração ou proporção.",
+    "methodVersion": "Conversão dimensional de princípio ativo; sem faixas de dose",
+    "currentMethodSource": {
+      "title": "DailyMed · norepinefrina · equivalência base/sal e concentração final",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=52e22892-4fc3-4f53-9f39-0b5c66da3040&version=3",
+      "version": "Conversão dimensional de princípio ativo; sem faixas de dose",
+      "checkedAt": "2026-10-03",
+      "access": "manufacturer-regulatory-label"
+    },
+    "primaryVerification": {
+      "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=52e22892-4fc3-4f53-9f39-0b5c66da3040&version=3",
+      "checked": "Bula primária do fabricante: 4 mg de princípio ativo em base por 4 mL; 4 mg/1.000 mL correspondem a 4 mcg/mL. Diferenciada massa do sal e da base. Conferidas conversões dimensionais de dose para vazão e de vazão para dose.",
+      "access": "manufacturer-regulatory-label"
+    },
     "clinicalValidation": "not-performed",
-    "suppressLegacyFormula": true,
-    "formulaOverride": "Conversão dimensional em revisão: concentração (mcg/mL) = massa do princípio ativo (mg) × 1000 / volume final (mL). A identidade da substância, a formulação e a unidade devem ser verificadas antes de qualquer cálculo de infusão."
+    "languageReview": "not-performed",
+    "reviewStatus": "needs-review",
+    "implementationStatus": "available",
+    "versionEvidence": {
+      "status": "explicit-implemented-variant-and-existing-source-proofs-recorded",
+      "checkedAt": "2026-10-04T17:52:09.841Z",
+      "declaredMethodVersion": "Conversão dimensional de princípio ativo; sem faixas de dose",
+      "implementedVariant": "Concentração em mcg/mL = massa do princípio ativo em mg × 1000/volume final. Vazão = dose × (peso se mcg/kg/min) × 60/concentração. Dose = vazão × concentração/[60 × (peso se necessário)].",
+      "inputContract": {
+        "fields": [
+          {
+            "key": "droga",
+            "label": "Droga",
+            "type": "sel",
+            "optional": false,
+            "options": {
+              "nora": "Noradrenalina",
+              "adre": "Adrenalina",
+              "dopa": "Dopamina",
+              "dobuta": "Dobutamina",
+              "fenil": "Fenilefrina",
+              "milri": "Milrinona",
+              "outra": "Outra droga"
+            }
+          },
+          {
+            "key": "modo",
+            "label": "Calcular",
+            "type": "radio",
+            "optional": false,
+            "options": {
+              "dose": "Vazão a partir da dose",
+              "vazao": "Dose a partir da vazão"
+            }
+          },
+          {
+            "key": "unidade",
+            "label": "Unidade da dose",
+            "type": "radio",
+            "optional": false,
+            "options": {
+              "kg": "mcg/kg/min",
+              "min": "mcg/min"
+            }
+          },
+          {
+            "key": "massa",
+            "label": "Massa do princípio ativo em base, não do sal",
+            "type": "num",
+            "min": 0.1,
+            "max": 2000,
+            "unit": "mg",
+            "optional": false,
+            "options": null
+          },
+          {
+            "key": "volume",
+            "label": "Volume total da solução",
+            "type": "num",
+            "min": 10,
+            "max": 1000,
+            "unit": "mL",
+            "optional": false,
+            "options": null
+          },
+          {
+            "key": "peso",
+            "label": "Peso (para mcg/kg/min)",
+            "type": "num",
+            "min": 2,
+            "max": 300,
+            "unit": "kg",
+            "optional": true,
+            "options": null
+          },
+          {
+            "key": "dose",
+            "label": "Dose",
+            "type": "num",
+            "min": 0.001,
+            "max": 100,
+            "unit": "mcg/kg/min ou mcg/min",
+            "optional": true,
+            "options": null
+          },
+          {
+            "key": "vazao",
+            "label": "Vazão da bomba",
+            "type": "num",
+            "min": 0.1,
+            "max": 999,
+            "unit": "mL/h",
+            "optional": true,
+            "options": null
+          },
+          {
+            "key": "contexto",
+            "label": "Massa equivalente em base, bula da formulação, volume final, unidade e dose prescrita conferidos?",
+            "type": "sel",
+            "optional": false,
+            "options": {
+              "0": "Não",
+              "1": "Sim"
+            }
+          }
+        ],
+        "hash": "63f247bc994aaf928c8bdcb780a2bd3d559845a697c336aa44dabccd4fad8fd0",
+        "hashInputDefinition": "SHA256 of UTF8 JSON.stringify({id:tool.id,fields:tool.fields,formula:tool.formula,config:tool.config||null}), preserving declared order/value types; not a hash of versionEvidence.inputContract.fields display projection."
+      },
+      "sourceEditions": [
+        {
+          "citation": "DailyMed · norepinefrina · equivalência base/sal e concentração final",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=52e22892-4fc3-4f53-9f39-0b5c66da3040&version=3",
+          "class": "existing-source-record-transcribed",
+          "declaredCitationPreserved": true,
+          "sourceIdentityRecheckedInThisNormalization": false,
+          "publicationEditionConfirmationInThisNormalization": "not-performed",
+          "fullTextRetrievalInThisNormalization": false,
+          "formulaConformance": "not-assessed"
+        },
+        {
+          "citation": "Overgaard CB, Dzavík V. Inotropes and vasopressors: review of physiology and clinical use in cardiovascular disease. Circulation, 2008.",
+          "url": "https://doi.org/10.1161/CIRCULATIONAHA.107.728840",
+          "class": "existing-source-record-transcribed",
+          "declaredCitationPreserved": true,
+          "sourceIdentityRecheckedInThisNormalization": false,
+          "publicationEditionConfirmationInThisNormalization": "not-performed",
+          "fullTextRetrievalInThisNormalization": false,
+          "formulaConformance": "not-assessed"
+        },
+        {
+          "citation": "Evans L et al. Surviving sepsis campaign: international guidelines for management of sepsis and septic shock 2021. Intensive Care Med, 2021.",
+          "url": "https://doi.org/10.1007/s00134-021-06506-y",
+          "class": "existing-source-record-transcribed",
+          "declaredCitationPreserved": true,
+          "sourceIdentityRecheckedInThisNormalization": false,
+          "publicationEditionConfirmationInThisNormalization": "not-performed",
+          "fullTextRetrievalInThisNormalization": false,
+          "formulaConformance": "not-assessed"
+        }
+      ],
+      "existingSourceEvidence": {
+        "currentMethodSource": {
+          "title": "DailyMed · norepinefrina · equivalência base/sal e concentração final",
+          "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=52e22892-4fc3-4f53-9f39-0b5c66da3040&version=3",
+          "version": "Conversão dimensional de princípio ativo; sem faixas de dose",
+          "checkedAt": "2026-10-03",
+          "access": "manufacturer-regulatory-label"
+        },
+        "primaryVerification": {
+          "url": "https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=52e22892-4fc3-4f53-9f39-0b5c66da3040&version=3",
+          "checked": "Bula primária do fabricante: 4 mg de princípio ativo em base por 4 mL; 4 mg/1.000 mL correspondem a 4 mcg/mL. Diferenciada massa do sal e da base. Conferidas conversões dimensionais de dose para vazão e de vazão para dose.",
+          "access": "manufacturer-regulatory-label"
+        }
+      },
+      "editionRecordingScope": "The methodVersion and all previously recorded source access/edition proofs are transcribed unchanged. This technical normalization makes no new bibliographic/full-text/source-formula confirmation; named existing read scopes remain in existingSourceEvidence. A missing standardized container did not mean the method edition was missing.",
+      "publicationEditionConfirmationReevaluated": false,
+      "fullFormulaConformanceReviewed": false,
+      "formulaConformance": "Not established by technical hashes or metadata normalization; retain existing bounded source arithmetic and clinical review separately.",
+      "independentArithmetic": {
+        "status": "passed",
+        "testedAt": "2026-10-03",
+        "total": 37,
+        "passed": 37,
+        "evidencePath": "reports/review-20261003/restored-methods-source-rules.json",
+        "scope": "Independent expected values and source-rule boundary checks; not clinical approval.",
+        "sourceRowCount": 37,
+        "uniqueApiInputCount": 33,
+        "inputIdentity": {
+          "definition": "Distinct JSON input objects within each method after recursively sorting object keys; array order, numeric values and JSON value types preserved. Uses stored input/inputs before implicit default completion, numeric coercion or clinical feature interpretation. Identity across different methods is not collapsed. Repeated scenarios are retained and coverage status is unchanged.",
+          "audit": {
+            "file": "reports/review-20261003/independent-source-corpus-input-identity-audit-final25.json",
+            "sha256": "35d65e84c5608a5f572fce6837f0a8c101b2266f5d6eec32a3d60d2bb6b022ca"
+          },
+          "sourceRows": 37,
+          "uniqueApiInputs": 33,
+          "duplicateRows": 4,
+          "duplicates": [
+            {
+              "first": 14,
+              "repeat": 17,
+              "input": {
+                "droga": "nora",
+                "modo": "dose",
+                "unidade": "kg",
+                "massa": null,
+                "volume": 250,
+                "peso": 70,
+                "dose": 0.1,
+                "contexto": "1"
+              }
+            },
+            {
+              "first": 19,
+              "repeat": 22,
+              "input": {
+                "droga": "nora",
+                "modo": "dose",
+                "unidade": "kg",
+                "massa": 16,
+                "volume": null,
+                "peso": 70,
+                "dose": 0.1,
+                "contexto": "1"
+              }
+            },
+            {
+              "first": 4,
+              "repeat": 24,
+              "input": {
+                "droga": "nora",
+                "modo": "dose",
+                "unidade": "kg",
+                "massa": 16,
+                "volume": 250,
+                "peso": null,
+                "dose": 0.1,
+                "contexto": "1"
+              }
+            },
+            {
+              "first": 5,
+              "repeat": 28,
+              "input": {
+                "droga": "nora",
+                "modo": "dose",
+                "unidade": "kg",
+                "massa": 16,
+                "volume": 250,
+                "peso": 70,
+                "dose": null,
+                "contexto": "1"
+              }
+            }
+          ],
+          "coverageStatusUnchanged": true
+        },
+        "publicCandidateBankOmitted": true
+      },
+      "clinicalApproval": "not-performed",
+      "translationApproval": "not-performed",
+      "releaseApproval": "not-performed",
+      "professionalLanguageApproval": "not-performed",
+      "sourceRightsApproval": "not-performed",
+      "implementationHash": "cbf40658efb4b750a59de655fa3ef414431f616d6b985a81fbd92ea17c36ad25",
+      "implementationHashScope": "Exact current calculator.js bytes, individually verified in three app mirrors. This is not a full dependency-closure hash.",
+      "technicalBindingHistory": [
+        {
+          "recordedAt": "2026-10-04T17:52:09.841Z",
+          "scope": "First standardized container; explicit existing methodVersion and source proof objects preserved.",
+          "priorStandardizedContainerPresent": false,
+          "priorImplementationVersion": null,
+          "explicitMethodVersion": "Conversão dimensional de princípio ativo; sem faixas de dose",
+          "sourceEvidenceSha256": "860aaf451dea10b3d6f777a4d7fe9b5d3ebccd450d4f62a000afcce0c90e2e3e",
+          "metadataAudit": {
+            "file": "reports/review-20261003/native-technical-bindings-audit-publication-final26.json",
+            "sha256": "e615fa3a42555f8fbeb4de8763893c3e981a73eae4c8c1994b33727e19ebd8c8"
+          }
+        }
+      ]
+    },
+    "implementationVersion": "drogas-vasoativas@native-2026-10-04+cbf40658efb4"
   },
-  "clinicalValidation": "not-performed"
+  "sourceToolSha256": "8279693b481beb14528ae6639d52ba1b991114abca35cd33630d4cc9d0f894e5",
+  "omittedFullReferenceBanks": [
+    {
+      "at": "independentArithmeticTest.cases",
+      "rows": 37,
+      "sha256": "8534daff3fe2df7d6cc21b3d3f4a98e3dca343ce99db236fd71516a2fe8e6ac9",
+      "reason": "Full independent reference bank omitted from standalone public candidate; original evidence references retained"
+    },
+    {
+      "at": "versionEvidence.independentArithmetic.cases",
+      "rows": 37,
+      "sha256": "8534daff3fe2df7d6cc21b3d3f4a98e3dca343ce99db236fd71516a2fe8e6ac9",
+      "reason": "Embedded complete independent bank omitted; edition, scope and evidence references retained"
+    }
+  ],
+  "currentSource": {
+    "file": "apps/website/private/tool-code/drogas-vasoativas/calculator.js",
+    "bytes": 495,
+    "sha256": "cbf40658efb4b750a59de655fa3ef414431f616d6b985a81fbd92ea17c36ad25"
+  },
+  "clinicalValidation": "not-performed",
+  "professionalLanguageReview": "not-performed",
+  "sourceRightsApproval": "not-performed"
 }
